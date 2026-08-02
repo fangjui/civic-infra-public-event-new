@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investing in civic infrastructure : Berlin, 4 August 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --paper:#EDEEE9;
+  --paper-2:#E4E6DF;
+  --paper-3:#D9DCD3;
+  --ink:#14201D;
+  --ink-soft:#4C574F;
+  --ink-faint:#78827A;
+  --stamp:#4E3A8C;
+  --stamp-wash:rgba(78,58,140,.09);
+  --stamp-line:rgba(78,58,140,.32);
+  --carbon-blue:#9DB6C8;
+  --carbon-pink:#DDB2AC;
+  --carbon-green:#AFC5A8;
+  --rule:#C3C7BC;
+  --rule-soft:#D5D8CE;
+  --green:#2C6349;
+  --amber:#8A6A16;
+  --maxw:1080px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Newsreader',Georgia,serif;
+  font-size:18px;
+  line-height:1.62;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    repeating-linear-gradient(0deg,rgba(20,32,29,.014) 0 1px,transparent 1px 3px);
+}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;line-height:1.06;margin:0;letter-spacing:-.02em;}
+p{margin:0 0 1em;}
+a{color:var(--stamp);text-decoration:none;border-bottom:1px solid var(--stamp-line);}
+a:hover{background:var(--stamp-wash);}
+:focus-visible{outline:2.5px solid var(--stamp);outline-offset:3px;}
+
+.mono{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+/* ---------- sticky bar ---------- */
+.bar{
+  position:sticky;top:0;z-index:60;
+  background:rgba(237,238,233,.93);
+  backdrop-filter:blur(9px);
+  border-bottom:1px solid var(--rule);
+}
+.bar-in{max-width:var(--maxw);margin:0 auto;padding:9px 28px;display:flex;align-items:center;gap:18px;justify-content:space-between;}
+.bar-id{color:var(--ink-faint);}
+.bar-id b{color:var(--ink);font-weight:600;}
+.toggle{display:flex;align-items:center;gap:9px;cursor:pointer;user-select:none;border:1px solid var(--stamp-line);padding:5px 11px;border-radius:2px;background:transparent;color:var(--stamp);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;}
+.toggle:hover{background:var(--stamp-wash);}
+.sw{width:26px;height:13px;border:1px solid var(--stamp-line);border-radius:9px;position:relative;flex:none;}
+.sw::after{content:"";position:absolute;top:1px;left:1px;width:9px;height:9px;border-radius:50%;background:var(--stamp-line);transition:.22s;}
+body.reveal .sw{background:var(--stamp-wash);}
+body.reveal .sw::after{left:14px;background:var(--stamp);}
+
+/* ---------- hero ---------- */
+.hero{padding:74px 0 56px;border-bottom:2px solid var(--ink);}
+.hero .eyebrow{color:var(--ink-faint);margin-bottom:26px;}
+.hero h1{font-size:clamp(38px,7.2vw,80px);font-weight:800;letter-spacing:-.035em;max-width:15ch;}
+.hero h1 em{font-style:normal;color:var(--stamp);}
+.thesis{
+  margin-top:38px;max-width:60ch;font-size:clamp(19px,2.3vw,24px);line-height:1.5;color:var(--ink);
+  border-left:3px solid var(--stamp);padding-left:20px;
+}
+.hero-meta{margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.hm{background:var(--paper);padding:13px 15px;}
+.hm .k{color:var(--ink-faint);display:block;margin-bottom:5px;}
+.hm .v{font-size:15px;line-height:1.35;}
+
+/* ---------- sections ---------- */
+section{padding:62px 0;border-bottom:1px solid var(--rule);scroll-margin-top:58px;}
+.sechead{display:flex;gap:20px;align-items:baseline;margin-bottom:14px;flex-wrap:wrap;}
+.secno{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--stamp);letter-spacing:.1em;padding-top:6px;flex:none;}
+section h2{font-size:clamp(26px,4vw,42px);letter-spacing:-.028em;max-width:20ch;}
+.standfirst{max-width:64ch;font-size:19px;color:var(--ink-soft);margin:16px 0 34px;}
+.body-col{max-width:64ch;}
+
+/* ---------- claim stamps ---------- */
+.claim{position:relative;border-left:2px solid var(--rule-soft);padding-left:16px;margin:22px 0;transition:.25s;}
+.claim .tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;padding:2px 7px;border:1px solid currentColor;border-radius:1px;margin-bottom:7px;}
+.claim[data-s="confirmed"] .tag{color:var(--green);}
+.claim[data-s="assumption"] .tag{color:var(--stamp);}
+.claim[data-s="open"] .tag{color:var(--amber);}
+.claim p:last-child{margin-bottom:0;}
+body.reveal .claim[data-s="assumption"]{border-left-color:var(--stamp);background:var(--stamp-wash);padding:12px 16px;margin-left:-0px;}
+body.reveal .claim[data-s="open"]{border-left-color:var(--amber);}
+
+/* ---------- OECD bars ---------- */
+.oecd{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start;margin-top:8px;}
+.pyr{display:flex;flex-direction:column;gap:3px;}
+.pyr-row{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;}
+.pyr-l{background:var(--paper-2);border:1px solid var(--rule);padding:9px 12px;font-size:14px;line-height:1.3;display:flex;align-items:center;}
+.pyr-mid{width:5px;background:var(--stamp);opacity:.18;}
+.pyr-r{background:transparent;border:1px dashed var(--stamp-line);padding:9px 12px;font-size:14px;line-height:1.3;display:flex;align-items:center;color:var(--stamp);}
+.pyr-cap{margin-top:12px;}
+
+/* ---------- permit vs licence cards ---------- */
+.docs{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:12px 0 6px;}
+.doc{background:#F4F5F0;border:1px solid var(--ink);position:relative;padding:0;box-shadow:5px 5px 0 var(--paper-3);}
+.doc.lic{box-shadow:5px 5px 0 var(--carbon-blue);}
+.doc-top{border-bottom:1px solid var(--ink);padding:11px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.doc-top .t{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em;}
+.doc-body{padding:16px 18px 20px;}
+.doc-q{font-size:17px;font-style:italic;color:var(--stamp);margin-bottom:14px;line-height:1.4;}
+.fields{border-top:1px solid var(--rule-soft);}
+.f{display:grid;grid-template-columns:82px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--rule-soft);font-size:14.5px;line-height:1.35;}
+.f .fk{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);padding-top:3px;}
+.doc-eg{margin-top:14px;padding-top:12px;border-top:1px dashed var(--rule);font-size:14.5px;line-height:1.45;}
+.doc-eg b{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:5px;font-weight:500;}
+
+.sobut{margin-top:30px;background:var(--ink);color:var(--paper);padding:24px 26px;max-width:none;}
+.sobut .mono{color:var(--carbon-blue);display:block;margin-bottom:9px;}
+.sobut p{margin:0;font-size:19px;line-height:1.5;max-width:70ch;}
+.sobut b{color:#fff;font-weight:600;}
+
+/* ---------- asset families ---------- */
+.fam{margin-top:14px;}
+.fam-h{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:6px;margin:30px 0 0;}
+.fam-h .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.02em;}
+.fam-h .d{font-size:14.5px;color:var(--ink-soft);}
+.assets{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--rule);border-left:1px solid var(--rule);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.as{background:var(--paper);padding:15px 16px 17px;}
+.as .num{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--stamp);letter-spacing:.1em;font-weight:600;}
+.as h4{font-size:17px;margin:5px 0 7px;letter-spacing:-.015em;}
+.as p{font-size:14.5px;line-height:1.45;color:var(--ink-soft);margin:0 0 9px;}
+.as .who{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);border-top:1px dotted var(--rule);padding-top:8px;line-height:1.5;}
+.as .who i{font-style:normal;color:var(--stamp);}
+.as.new{background:#F4F2F8;}
+.as.new::after{content:"proposed addition";display:block;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--stamp);}
+
+@media(max-width:820px){
+  .oecd,.docs{grid-template-columns:1fr;gap:22px;}
+  section{padding:46px 0;}
+  .hero{padding:52px 0 42px;}
+  body{font-size:17px;}
+  .wrap{padding:0 20px;}
+  .bar-in{padding:8px 20px;gap:10px;}
+  .bar-id{display:none;}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}html{scroll-behavior:auto;}}
+/* ---------- chain diagram ---------- */
+.chain{margin:10px 0 0;border:1px solid var(--ink);background:#F4F5F0;}
+.chain-row{display:grid;grid-template-columns:132px 1fr;border-bottom:1px solid var(--rule);}
+.chain-row:last-child{border-bottom:none;}
+.chain-lab{background:var(--paper-2);border-right:1px solid var(--rule);padding:14px 13px;display:flex;flex-direction:column;justify-content:center;gap:4px;}
+.chain-lab .z{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-faint);}
+.chain-lab .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;line-height:1.15;letter-spacing:-.015em;}
+.chain-c{padding:14px 18px;display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;}
+.chain-c p{margin:0;font-size:15px;line-height:1.45;flex:1 1 260px;min-width:0;}
+.pill{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.09em;text-transform:uppercase;padding:4px 9px;border-radius:99px;white-space:nowrap;font-weight:500;}
+.pill.local{background:var(--carbon-blue);color:#16303F;}
+.pill.commons{background:var(--carbon-green);color:#1D3318;}
+.pill.owned{background:var(--stamp);color:#fff;}
+.chain-row.r1{background:#EFF3F5;}
+.chain-row.r4,.chain-row.r5{background:#F2F0F7;}
+
+/* ---------- commons block ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start;}
+.bigq{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(21px,3vw,29px);line-height:1.18;letter-spacing:-.025em;margin:0 0 18px;}
+.answer{background:var(--stamp);color:#fff;padding:26px 28px;}
+.answer .mono{color:var(--carbon-blue);display:block;margin-bottom:11px;}
+.answer p{font-size:19px;line-height:1.48;margin:0 0 12px;}
+.answer p:last-child{margin:0;}
+.answer b{font-weight:600;}
+
+/* ---------- carbon licence layers ---------- */
+.carbons{margin-top:12px;display:flex;flex-direction:column;gap:16px;}
+.carbon{border:1px solid var(--ink);position:relative;padding:0;background:#F4F5F0;}
+.carbon.l1{box-shadow:6px 6px 0 var(--carbon-green);}
+.carbon.l2{box-shadow:6px 6px 0 var(--carbon-blue);}
+.carbon.l3{box-shadow:6px 6px 0 var(--carbon-pink);}
+.carbon-h{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--ink);padding:12px 20px;}
+.carbon-h h3{font-size:21px;letter-spacing:-.022em;}
+.carbon-h .mode{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;font-weight:600;}
+.carbon.l1 .mode{color:var(--green);}
+.carbon.l2 .mode{color:var(--stamp);}
+.carbon.l3 .mode{color:#8A4230;}
+.carbon-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:1px;background:var(--rule-soft);}
+.cg{background:#F4F5F0;padding:12px 16px 14px;}
+.cg .k{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:5px;}
+.cg .v{font-size:14.5px;line-height:1.42;}
+.carbon-note{padding:12px 20px 16px;border-top:1px dashed var(--rule);font-size:15px;line-height:1.5;}
+.carbon-note b{color:var(--stamp);font-weight:600;}
+
+/* ---------- lawyer answer ---------- */
+.quotebox{border:2px solid var(--ink);padding:22px 26px;margin-bottom:32px;background:#F4F5F0;}
+.quotebox p{font-size:clamp(18px,2.4vw,23px);line-height:1.42;font-style:italic;margin:0 0 10px;}
+.quotebox .attr{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin:0;font-style:normal;}
+.steps{counter-reset:st;display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.st{background:var(--paper);padding:16px 20px;display:grid;grid-template-columns:34px 1fr;gap:16px;align-items:start;}
+.st::before{counter-increment:st;content:counter(st);font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#fff;background:var(--stamp);width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:50%;margin-top:2px;}
+.st h4{font-size:17px;margin:0 0 5px;letter-spacing:-.015em;}
+.st p{margin:0;font-size:15.5px;line-height:1.48;color:var(--ink-soft);}
+.st p b{color:var(--ink);font-weight:600;}
+
+/* ---------- typology explorer ---------- */
+.tabs{display:flex;gap:0;flex-wrap:wrap;border-bottom:2px solid var(--ink);margin-top:8px;}
+.tab{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:500;padding:11px 16px;background:transparent;border:1px solid var(--rule);border-bottom:none;cursor:pointer;color:var(--ink-soft);margin-right:4px;border-radius:2px 2px 0 0;}
+.tab:hover{background:var(--paper-2);}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+.panel{display:none;border:1px solid var(--ink);border-top:none;background:#F4F5F0;}
+.panel.on{display:block;}
+.panel-h{padding:18px 22px 14px;border-bottom:1px solid var(--rule);}
+.panel-h .kind{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;font-weight:600;color:var(--stamp);display:block;margin-bottom:6px;}
+.panel-h h3{font-size:22px;letter-spacing:-.022em;margin-bottom:8px;}
+.panel-h p{margin:0;font-size:16px;line-height:1.5;color:var(--ink-soft);max-width:66ch;}
+.panel-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--rule-soft);}
+.pg{background:#F4F5F0;padding:14px 18px 16px;}
+.pg .k{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:6px;}
+.pg .v{font-size:15px;line-height:1.45;}
+.pg .v em{font-style:normal;color:var(--stamp);}
+
+/* ---------- open questions ---------- */
+.qs{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:10px;}
+.q{background:var(--paper);padding:17px 20px;}
+.q .qh{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-bottom:7px;}
+.q .qn{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:var(--amber);letter-spacing:.09em;}
+.q h4{font-size:18px;letter-spacing:-.018em;}
+.q p{margin:0;font-size:15.5px;line-height:1.5;color:var(--ink-soft);max-width:76ch;}
+.q .owner{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-top:9px;}
+
+/* ---------- companion docs ---------- */
+.docs3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:12px;}
+.d3{border:1px solid var(--ink);background:#F4F5F0;padding:18px 20px 20px;display:flex;flex-direction:column;gap:9px;box-shadow:4px 4px 0 var(--paper-3);}
+.d3 .n{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--stamp);font-weight:600;}
+.d3 h4{font-size:18px;letter-spacing:-.02em;}
+.d3 p{margin:0;font-size:14.5px;line-height:1.45;color:var(--ink-soft);}
+.d3 .rd{font-size:14.5px;line-height:1.45;border-top:1px dashed var(--rule);padding-top:9px;margin-top:auto;}
+.d3 .rd b{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:4px;font-weight:500;}
+.d3.self{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+.d3.self p,.d3.self .rd{color:#C8CFC9;}
+.d3.self .n{color:var(--carbon-blue);}
+.d3.self .rd b{color:var(--carbon-blue);}
+
+footer{padding:46px 0 60px;}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--ink-faint);}
+
+@media(max-width:820px){
+  .split{grid-template-columns:1fr;gap:22px;}
+  .chain-row{grid-template-columns:1fr;}
+  .chain-lab{border-right:none;border-bottom:1px solid var(--rule);flex-direction:row;align-items:baseline;gap:10px;}
+  .tab{flex:1 1 auto;text-align:center;}
+}
+
+.agenda .q.ag{display:grid;grid-template-columns:76px 1fr;gap:18px;align-items:start;}
+.agenda .tm{color:var(--stamp);font-weight:600;font-size:12px;padding-top:3px;letter-spacing:.06em;}
+.agenda .q h4{margin-bottom:4px;}
+.agenda .q p:empty{display:none;}
+@media(max-width:600px){.agenda .q.ag{grid-template-columns:1fr;gap:5px;}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="bar-in">
+    <div class="mono bar-id"><b>Investing in civic infrastructure</b> &nbsp;/&nbsp; Berlin &nbsp;/&nbsp; 4 August 2026</div>
+    <button class="toggle" id="tg" aria-pressed="false"><span class="sw"></span> Show what is assumed</button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="mono eyebrow">Dark Matter Labs · Berlin · Public evening, Tuesday 4 August 2026</div>
+    <h1>Permission is the <em>operating system</em> of cities.</h1>
+    <div class="thesis">
+      Every new use of space, every community gathering, every departure from the rules needs someone's yes. That layer of decision has never been designed as infrastructure, and it has never been funded as infrastructure. This evening asks whether it can be.
+    </div>
+    <div class="hero-meta">
+      <div class="hm"><span class="k mono">Date and time</span><span class="v">Tuesday 4 August 2026, 18:00 to 21:00</span></div>
+      <div class="hm"><span class="k mono">Venue</span><span class="v"><a href="https://medulla.city/">Medulla</a>, Dresdener Str. 113B, Kreuzberg</span></div>
+      <div class="hm"><span class="k mono">Capacity</span><span class="v">50 people. Free, donations welcome</span></div>
+      <div class="hm"><span class="k mono">What we want</span><span class="v">The parts you think will break</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="s1">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">§01</span><h2>Civic infrastructure is an underfunded asset class</h2></div>
+    <p class="standfirst">Digital public infrastructure, identity, payment and data exchange now draws serious attention from funders, governments and multilateral bodies. The governance layer that decides what is possible in a city draws almost none.</p>
+    <div class="body-col">
+      <div class="claim" data-s="confirmed">
+        <span class="tag">Confirmed</span>
+        <p>Underneath the funding gap sits a narrower one. Every permission needs something to attach to: a record of who has a stake in a place and what has been agreed. Most cities run that record informally, inconsistently, and on far too little resource.</p>
+      </div>
+      <div class="claim" data-s="confirmed">
+        <span class="tag">Confirmed</span>
+        <p>The cost is already being paid. It shows up as conflict, delay, arbitrary decisions, liability, and space that sits empty while people who could use it are turned away. It is simply paid invisibly, by everyone, rather than funded openly by anyone.</p>
+      </div>
+      <div class="claim" data-s="assumption">
+        <span class="tag">Our assumption</span>
+        <p>Community-led civic governance infrastructure lowers institutional risk: less cost from conflict, less liability from arbitrary decisions, more assets in use. That case is coherent and it has yet to be priced by anyone. Pricing it is part of what this evening is for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s2">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">§02</span><h2>A portfolio of three</h2></div>
+    <p class="standfirst">Dark Matter Labs has spent four years building and testing a framework for decentralised civic infrastructure. Three components, each usable on its own, each stronger together.</p>
+    <div class="docs3">
+      <div class="d3">
+        <span class="n">Identity and registry layer</span>
+        <h4>Relational identity</h4>
+        <p>A registry of relationships and standing that stays open as they change. Who has a stake in a place, and how that stake grows through what someone actually does.</p>
+        <div class="rd"><b>Status</b>In design</div>
+      </div>
+      <div class="d3 self">
+        <span class="n">Permissioning layer · live</span>
+        <h4>Civic Ledger</h4>
+        <p>Cities rethinking licensing as decentralised city operation. Working prototype, tested across more than 40 sites in three Korean cities. Spinning out in 2026.</p>
+        <div class="rd"><b>Status</b>Live, and the subject of tonight</div>
+      </div>
+      <div class="d3">
+        <span class="n">Knowledge and provenance layer</span>
+        <h4>Knowledge provenance</h4>
+        <p>A trusted registry linking data to the civic assets it describes and the people who produced it. The question is who made the data, and what it can be trusted to describe.</p>
+        <div class="rd"><b>Status</b>In design</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s3">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">§03</span><h2>The register argument</h2></div>
+    <div class="split">
+      <div class="body-col">
+        <p>Every permission needs a registry underneath it: some record of who has a stake in a place, and what has been agreed. Most registries record a fact, fixed once, at the moment someone had the authority to write it down.</p>
+        <p>Registries built that way concentrate power in whoever wrote the first entry. Registries built to hold a relationship over time distribute it, because standing can grow through what people do.</p>
+        <div class="claim" data-s="assumption">
+          <span class="tag">Our bet</span>
+          <p>Civic Ledger is a bet that the relationship should win this time. Its reputation ledger and Rule Review Queue exist because a commitment made in one moment has to stay open to challenge in the next.</p>
+        </div>
+      </div>
+      <div class="answer">
+        <span class="mono">The line to hold us to</span>
+        <p>A registry is a decision about <b>who counts</b>.</p>
+        <p>Rules are collective imagination made operational. They are what we want a city to become, written down in a form that can be acted on.</p>
+        <p>So the test tonight is not whether the platform has a database. Every system has a database. The test is whether standing in it can change, and who is allowed to change it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s4">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">§04</span><h2>The live example</h2></div>
+    <p class="standfirst">Civic Ledger turns complex governance decisions about space into structured, negotiable, learnable processes that cities and communities operate together.</p>
+    <div class="body-col">
+      <p>The platform works across three data layers: data it draws in from outside, such as sensors, city systems and community signals; data it creates through its own operation, such as conditions, agreements and compliance records; and data it hands back, as evidence, patterns and rule change.</p>
+      <div class="claim" data-s="confirmed">
+        <span class="tag">Confirmed</span>
+        <p>Built across two design sprints and deployed in a living lab covering more than 40 sites in Incheon, Yongin and Jeollanam-do.</p>
+      </div>
+      <div class="claim" data-s="confirmed">
+        <span class="tag">Confirmed · what the work taught us</span>
+        <p>Civic uses need to be demonstrated before they can be imagined, so small live demonstrations move further than consultation. Permission is felt as a relationship long before it is read as a rule. And every case that worked, worked because someone could see why a condition was set.</p>
+      </div>
+      <div class="claim" data-s="open">
+        <span class="tag">Open · the reason for this week</span>
+        <p>The platform spins out of Dark Matter Labs in 2026 and R&amp;D funding ends in December. Who pays for what, under what structure, is the question the Berlin week exists to answer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s5">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">§05</span><h2>Four cases from the field</h2></div>
+    <p class="standfirst">All four happened. They are the real friction that shaped the design, and one of them is happening a few streets from this room.</p>
+    <div class="qs">
+      <div class="q">
+        <div class="qh"><span class="qn">Case 1</span><h4>Run clubs, globally</h4></div>
+        <p>Run clubs tripled worldwide last year and cities are now reaching for permit rules to manage them. A weekly club of two hundred people wants a recurring route through public space. Under most rules, each week is a fresh application, priced and assessed as though the previous ten never happened.</p>
+      </div>
+      <div class="q">
+        <div class="qh"><span class="qn">Case 2</span><h4>A river in east London</h4></div>
+        <p>Volunteers restored 250 metres of a river that had suffered decades of illegal sewage discharge. The Environment Agency prosecuted. The volunteers had the evidence, the knowledge and the commitment. What they lacked was standing: a recognised right to act and to require a response.</p>
+      </div>
+      <div class="q">
+        <div class="qh"><span class="qn">Case 3</span><h4>A London housing estate</h4></div>
+        <p>Residents suffering noise pollution from a local scrapyard spent two months collecting time-stamped noise data. Good evidence, produced by the people affected, with no route into a decision that could act on it.</p>
+      </div>
+      <div class="q">
+        <div class="qh"><span class="qn">Case 4</span><h4>A Berlin nightclub, Monday to Friday</h4></div>
+        <p>A club here is world-famous from Friday night to Monday morning. For the other five days the venue is dark, the sound system is silent and the space sits empty, in a city where community groups struggle to find a room. The room exists. The permission to use it differently does not.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s6">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">§06</span><h2>What we hold in common</h2></div>
+    <p class="standfirst">A platform like this accumulates something valuable: the record of how civic permission decisions actually get made. Our position is that this record belongs in common hands, and we want that tested tonight.</p>
+    <div class="split">
+      <div class="body-col">
+        <div class="claim" data-s="confirmed">
+          <span class="tag">Confirmed · our position</span>
+          <p>Platforms that gather performance data usually hold the resulting intelligence, building an advantage over the very people who generated it. We are refusing that move. The conditions library, the compliance record and the reasoning behind each decision stay open.</p>
+        </div>
+        <div class="claim" data-s="assumption">
+          <span class="tag">Our assumption</span>
+          <p>Openness is what makes the record credible. A pattern that anyone can inspect and contest is worth more, to a regulator and to a court, than one held privately by the company that produced it.</p>
+        </div>
+      </div>
+      <div class="answer">
+        <span class="mono">How it earns</span>
+        <p>Open the record. <b>Charge for conformance to it.</b></p>
+        <p>Anyone may read the record, fork it, build on it. The scarce thing is the right to say <b>this decision was made to the standard</b>, and to carry the mark that proves it.</p>
+        <p>Gore earns its revenue from the tag. Michelin earns from tyres, and the Guide runs at a loss. The pattern is old. Applying it to civic permissioning is the new part.</p>
+      </div>
+    </div>
+    <div class="sobut">
+      <span class="mono">Reading the two revenue lists below</span>
+      <p>The streams that follow are what an <b>operating company</b> earns for running the service in a city. Separately, each operating company pays Dark Matter Labs Korea a protocol licence fee, and anyone at all can pay to certify against the standard. <b>Two layers, two different payers.</b> A fuller account is in the permits and licensing position paper.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s7">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">§07</span><h2>The investment thesis</h2></div>
+    <p class="standfirst">Civic infrastructure grows on a different curve from software, so the capital has to be shaped differently too. Venture timelines force extraction from a layer that only works if it stays trusted.</p>
+
+    <div class="fam">
+      <div class="fam-h"><span class="n">Revenue · who pays to use the platform</span><span class="d">Collected by the operating company in each city.</span></div>
+      <div class="assets">
+        <div class="as">
+          <div class="num">R1</div><h4>City subscription</h4>
+          <p>Cities and public asset managers pay for live visibility into civic demand, underused assets, risk patterns and rule bottlenecks.</p>
+          <div class="who">Payer: <i>local government</i></div>
+        </div>
+        <div class="as">
+          <div class="num">R2</div><h4>Asset owner managed service</h4>
+          <p>Private landowners, housing associations and estate managers pay for risk routing, conditional agreements, insurance support and dashboards.</p>
+          <div class="who">Payer: <i>asset owners</i></div>
+        </div>
+        <div class="as">
+          <div class="num">R3</div><h4>Civic intelligence reports</h4>
+          <p>Public authorities pay for analysis built on the open record: where demand is growing, which rules block useful activity, what policy needs to change.</p>
+          <div class="who">Payer: <i>public authorities</i></div>
+        </div>
+        <div class="as">
+          <div class="num">R4</div><h4>Outcome reporting</h4>
+          <p>Funders pay for verified evidence of what their money enabled. Useful for grants, social investment, public health, and climate funding.</p>
+          <div class="who">Payer: <i>funders</i></div>
+        </div>
+        <div class="as">
+          <div class="num">R5</div><h4>Selective platform fees</h4>
+          <p>Commercial and higher-risk uses pay a small fee. Civic, care-based, cultural and community uses go free. Differential pricing protects civic access.</p>
+          <div class="who">Payer: <i>commercial users</i></div>
+        </div>
+        <div class="as new">
+          <div class="num">R6</div><h4>Certification against the standard</h4>
+          <p>Anyone claiming conformance pays, including city systems and vendors that never run our software. This is the only line that scales past our own deployments.</p>
+          <div class="who">Payer: <i>anyone conforming</i></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fam">
+      <div class="fam-h"><span class="n">Capital · who invests in building it</span><span class="d">The instruments that fit a trust layer.</span></div>
+      <div class="assets">
+        <div class="as">
+          <div class="num">C1</div><h4>Foundational grants and GovTech programmes</h4>
+          <p>Philanthropy, civic funds and public-good capital for functions not yet priceable. In Berlin: GovTech Campus Deutschland and the Global Government Technology Centre.</p>
+          <div class="who">Horizon: <i>immediate</i></div>
+        </div>
+        <div class="as">
+          <div class="num">C2</div><h4>Outcome-based instruments</h4>
+          <p>Development impact bonds, outcomes funds and resilience contracts that pay for measurable civic outcomes: reduced processing time, avoided conflict, assets brought into use.</p>
+          <div class="who">Horizon: <i>medium</i></div>
+        </div>
+        <div class="as">
+          <div class="num">C3</div><h4>Risk pricing and insurance value</h4>
+          <p>The intelligence Civic Ledger generates has direct value to insurers and risk models. Funding infrastructure that lowers institutional risk is a priceable proposition.</p>
+          <div class="who">Horizon: <i>emerging</i></div>
+        </div>
+        <div class="as">
+          <div class="num">C4</div><h4>Patient capital and co-builder partnerships</h4>
+          <p>Mission-aligned investors accepting below-market returns. Steward-shareholder structures protect the mission while allowing economic participation.</p>
+          <div class="who">Horizon: <i>from 2027</i></div>
+        </div>
+        <div class="as">
+          <div class="num">C5</div><h4>Protocol funding</h4>
+          <p>Non-dilutive grants for the protocol layer: decentralised identity, smart contracts, collective pool mechanics. Public goods funding rounds.</p>
+          <div class="who">Horizon: <i>opportunistic</i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s8">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">§08</span><h2>Who we want in the room</h2></div>
+    <p class="standfirst">A conversation. We are looking for people who can help shape two things: what civic infrastructure is worth, and who should hold it.</p>
+    <div class="docs3">
+      <div class="d3">
+        <span class="n">Group one</span>
+        <h4>Investors and funders</h4>
+        <p>Patient capital, GovTech funds, impact investors with ESG mandates, public innovation funds, and foundations with civic tech mandates.</p>
+        <div class="rd"><b>What we want from you</b>Tell us what you would need to see before funding this.</div>
+      </div>
+      <div class="d3">
+        <span class="n">Group two</span>
+        <h4>City actors and commissioners</h4>
+        <p>Public bodies, city departments, housing associations and private asset owners who manage shared space. Potential licence-fee payers and pilot partners.</p>
+        <div class="rd"><b>What we want from you</b>Tell us whether you would pay, and at what level.</div>
+      </div>
+      <div class="d3">
+        <span class="n">Group three</span>
+        <h4>Civic infrastructure thinkers</h4>
+        <p>People working across digital governance, public interest technology, legal and entity design, open licensing, and civic data.</p>
+        <div class="rd"><b>What we want from you</b>Tell us where the commons position breaks.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s9">
+  <div class="wrap">
+    <div class="sechead"><span class="secno">§09</span><h2>The evening</h2></div>
+    <p class="standfirst">The demo opens, so the room sees the live problem before anyone frames it. Robyn holds the whole arc and lands every handover, so nothing starts cold.</p>
+    <div class="qs agenda">
+      <div class="q ag"><span class="tm mono">18:00</span><div><h4>Arrivals and drinks</h4><p>Robyn opens the room and sets why everyone is here.</p></div></div>
+      <div class="q ag"><span class="tm mono">18:30</span><div><h4>Welcome. Robyn. 5 min</h4><p>Frames the evening and hands to the demo.</p></div></div>
+      <div class="q ag"><span class="tm mono">18:35</span><div><h4>Live platform demo. Koo. 40 min</h4><p>No framing first. Four real cases shown live, including the run club and the Berlin nightclub, worked through the platform in front of the room.</p></div></div>
+      <div class="q ag"><span class="tm mono">19:15</span><div><h4>Naming the gap. Indy. 10 min</h4><p>What that demo shows about a city with no working registry for shared space, and no record of who has standing to act.</p></div></div>
+      <div class="q ag"><span class="tm mono">19:25</span><div><h4>Civic Ledger as one answer. Eunji. 10 min</h4><p>One working attempt at that infrastructure among several possible ones, and where it remains unproven.</p></div></div>
+      <div class="q ag"><span class="tm mono">19:35</span><div><h4>What this week has surfaced. Fang. 10 min</h4><p>What changed in the team's thinking across Monday and Tuesday, where the sessions pushed back hardest, and what stays open.</p></div></div>
+      <div class="q ag"><span class="tm mono">19:45</span><div><h4>Table conversations. 30 min</h4><p>Three tables, each holding one question the team cannot yet answer: funding, governance, and what the platform should hold in common.</p></div></div>
+      <div class="q ag"><span class="tm mono">20:15</span><div><h4>Break and refreshments</h4><p></p></div></div>
+      <div class="q ag"><span class="tm mono">20:20</span><div><h4>Open conversation. Robyn. 40 min</h4><p>What emerged from the tables, said back in the room's own words. Closes with each person naming one thing they will do next.</p></div></div>
+      <div class="q ag"><span class="tm mono">21:00</span><div><h4>Close</h4><p></p></div></div>
+    </div>
+    <div class="sobut">
+      <span class="mono">What you walk away with</span>
+      <p>A working answer to one question: is civic infrastructure fundable, and by whom? A position you tested against a live case. <b>What we want from you: tell us where this breaks,</b> name what you would need to see to fund, pilot or build it, and leave with one thing you will do next, said out loud in the room.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="mono">Dark Matter Labs · civic-ledger.darkmatterlabs.org · Berlin gathering 2026</div>
+    <div class="mono">Contact: Fang-Raye Chang, fang@darkmatterlabs.org</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tg=document.getElementById('tg');
+  if(tg){tg.addEventListener('click',function(){
+    var on=document.body.classList.toggle('reveal');
+    tg.setAttribute('aria-pressed',on?'true':'false');
+    tg.lastChild.textContent=on?' Hide what is assumed':' Show what is assumed';
+  });}
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(o){o.setAttribute('aria-selected','false');
+        var p=document.getElementById(o.getAttribute('aria-controls'));p.classList.remove('on');p.hidden=true;});
+      t.setAttribute('aria-selected','true');
+      var p=document.getElementById(t.getAttribute('aria-controls'));p.classList.add('on');p.hidden=false;
+    });
+    t.addEventListener('keydown',function(e){var n=null;
+      if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+      if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+      if(n){e.preventDefault();n.focus();n.click();}});
+  });
+})();
+</script>
+</body>
+</html>
